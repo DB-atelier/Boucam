@@ -10,15 +10,23 @@ QT       += widgets
 TARGET = BoucamQT
 TEMPLATE = app
 
+
+QMAKE_POST_LINK += $${QMAKE_COPY} .\\release\\BoucamQT.exe  .\\..\\Boucam\\BoucamQT.exe
+
 INCLUDEPATH += $$PWD/../../opencv246/build/include
 DEPENDPATH += $$PWD/../../opencv246/build/include
 
+
 SOURCES += \
     ../src/mainwindow.cpp \
-    ../src/main.cpp
+    ../src/main.cpp \
+    ../src/webcam.cpp \
+    ../src/facedetection.cpp
 
 HEADERS  += \
-    ../src/mainwindow.h
+    ../src/mainwindow.h \
+    ../src/webcam.h \
+    ../src/facedetection.h
 
 FORMS    += \
     ../src/mainwindow.ui
