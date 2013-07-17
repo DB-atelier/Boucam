@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QBasicTimer>
+#include <QLabel>
+
+#include "webcam.h"
 
 namespace Ui {
 class MainWindow;
@@ -15,8 +19,18 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     
+    void init();
+
+    Webcam webcam;
+
+    QBasicTimer timer;
+    void timerEvent(QTimerEvent* event);
+    QLabel* pLabelCV;
+
 private:
     Ui::MainWindow *ui;
+
+
 };
 
 #endif // MAINWINDOW_H
