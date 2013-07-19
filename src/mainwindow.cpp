@@ -22,6 +22,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::init()
 {
+    faceD.init();
     webcam.open(0); //... ->numero de cam en settings
     timer.start(40,this);
 }
@@ -29,12 +30,25 @@ void MainWindow::init()
 //"mainloop"
 void MainWindow::timerEvent(QTimerEvent* event)
 {
-    QPixmap* ppix = webcam.capturePixmap();
-    if( ppix )
+    if(faceD.detectionEnabled)
     {
-        pLabelCV->setPixmap(*ppix);
-        pLabelCV->adjustSize();
-        resize(ppix->width(),ppix->height());
+        cv::Mat* curFrame=webcam.capture();
+        if(curFrame)
+        {
+            QPixmap* camPix=faceD.detectAndDisplay(*curFrame);
+            pLabelCV->setPixmap(*camPix);
+            pLabelCV->adjustSize();
+            resize(camPix->width(),camPix->height());
+        }
+    }else
+    {
+        QPixmap* ppix = webcam.capturePixmap();
+        if( ppix )
+        {
+            pLabelCV->setPixmap(*ppix);
+            pLabelCV->adjustSize();
+            resize(ppix->width(),ppix->height());
+        }
     }
 }
 

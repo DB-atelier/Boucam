@@ -6,6 +6,7 @@
 #include <QLabel>
 
 #include "webcam.h"
+#include "facedetection.h"
 
 namespace Ui {
 class MainWindow;
@@ -22,6 +23,7 @@ public:
     void init();
 
     Webcam webcam;
+    FaceDetection faceD;
 
     QBasicTimer timer;
     void timerEvent(QTimerEvent* event);
