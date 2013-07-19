@@ -7,6 +7,7 @@
 
 #include <QPixmap>
 
+#include "facedetection.h"
 
 class Webcam
 {
@@ -26,6 +27,9 @@ public:
     int camId;
     cv::VideoCapture videocapture;
     cv::Mat frame;
+    FaceDetection faceD;
+
+
 };
 
 #endif // WEBCAM_H

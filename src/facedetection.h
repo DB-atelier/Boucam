@@ -1,14 +1,16 @@
 #ifndef FACEDETECTION_H
 #define FACEDETECTION_H
 
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
+//#include <opencv2/core/core.hpp>
+//#include <opencv2/highgui/highgui.hpp>
+//#include <opencv2/imgproc/imgproc.hpp>
 
 //Intégration d'un bout de code pour reconnaissance de visage
 #include <opencv2/objdetect/objdetect.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+
+#include <opencv2/highgui/highgui_c.h>
 
 #include <iostream>
 #include <stdio.h>
@@ -34,7 +36,7 @@ public:
     int  sendTo(ChaussetteUdp* pSock);
 
     //K having fun
-    QPixmap* detectAndDisplay(cv::Mat frame );
+    QPixmap detectAndDisplay(cv::Mat frame );
     //...
 
 

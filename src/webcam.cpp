@@ -15,6 +15,7 @@ bool Webcam::open(int icam)
     close();
     videocapture.open(icam);
     camId = icam;
+    faceD.init();
     return videocapture.isOpened();
 }
 
@@ -38,9 +39,10 @@ QPixmap* Webcam::capturePixmap()
 {
     if(!videocapture.read(frame))
         return NULL;
-    cv::Mat rgb;
-    cv::cvtColor(frame, rgb, (-2*frame.channels()+10)); //???
-    qtFrame.convertFromImage(QImage(rgb.data, rgb.cols, rgb.rows, QImage::Format_RGB888));
+    qtFrame=faceD.detectAndDisplay(frame);
+//    cv::Mat rgb;
+//    cv::cvtColor(frame, rgb, (-2*frame.channels()+10)); //???
+//    qtFrame.convertFromImage(QImage(rgb.data, rgb.cols, rgb.rows, QImage::Format_RGB888));
     return &qtFrame;
 }
 #endif
