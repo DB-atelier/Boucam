@@ -39,7 +39,9 @@ QPixmap* Webcam::capturePixmap()
 {
     if(!videocapture.read(frame))
         return NULL;
-    qtFrame=faceD.detectAndDisplay(frame);
+    faceD.detect(frame);
+    faceD.drawEllipse();
+    qtFrame=faceD.toQPixmap();
 //    cv::Mat rgb;
 //    cv::cvtColor(frame, rgb, (-2*frame.channels()+10)); //???
 //    qtFrame.convertFromImage(QImage(rgb.data, rgb.cols, rgb.rows, QImage::Format_RGB888));

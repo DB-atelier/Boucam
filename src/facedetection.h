@@ -2,10 +2,7 @@
 #define FACEDETECTION_H
 
 //#include <opencv2/core/core.hpp>
-//#include <opencv2/highgui/highgui.hpp>
-//#include <opencv2/imgproc/imgproc.hpp>
 
-//Intégration d'un bout de code pour reconnaissance de visage
 #include <opencv2/objdetect/objdetect.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
@@ -36,7 +33,9 @@ public:
     int  sendTo(ChaussetteUdp* pSock);
 
     //K having fun
-    QPixmap detectAndDisplay(cv::Mat frame );
+    void detect(cv::Mat frame );
+    void drawEllipse();
+    QPixmap toQPixmap();
     //...
 
 
@@ -45,7 +44,17 @@ public:
     cv::CascadeClassifier face_cascade;
     cv::RNG rng;
 
+    std::vector<cv::Rect> faces;
+    cv::Mat frame_gray;
+    cv::Mat lastFrame;
     QPixmap  qtFrame;
+
+    double scaleFactor;
+    int minNeighbors;
+    int flags;
+    int minSize;
+    int maxSize;
+
     bool detectionEnabled;
 };
 
