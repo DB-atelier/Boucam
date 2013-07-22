@@ -4,8 +4,9 @@
 #include <QMainWindow>
 #include <QBasicTimer>
 #include <QLabel>
-
+#include <QKeyEvent>
 #include "webcam.h"
+#include "settings.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,14 +19,14 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    
     void init();
+    void keyPressEvent(QKeyEvent *);
+    void timerEvent(QTimerEvent* event);
 
     Webcam webcam;
-
     QBasicTimer timer;
-    void timerEvent(QTimerEvent* event);
     QLabel* pLabelCV;
+    Settings setWid;
 
 private:
     Ui::MainWindow *ui;

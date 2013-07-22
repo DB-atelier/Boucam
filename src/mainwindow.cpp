@@ -38,3 +38,12 @@ void MainWindow::timerEvent(QTimerEvent* event)
     }
 }
 
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    switch(event->key())
+    {
+        case Qt::Key_F5:
+            setWid.show();
+            break;
+    }
+}

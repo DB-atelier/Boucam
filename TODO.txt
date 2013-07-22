@@ -1,5 +1,15 @@
 Fenetre parametrage
 	CurrentDevice
+	TrustMin
 	FaceMinSize
 	FaceMaxSize
-	
+	InertieMvt
+	InterieScl
+	OffDelay
+	DoCanny
+	OnDelay
+
+	Grid X
+	Grid Y
+	Pix%
+	Grid%
