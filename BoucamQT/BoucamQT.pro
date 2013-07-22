@@ -21,12 +21,14 @@ SOURCES += \
     ../src/mainwindow.cpp \
     ../src/main.cpp \
     ../src/webcam.cpp \
-    ../src/facedetection.cpp
+    ../src/facedetection.cpp \
+    ../src/settings.cpp
 
 HEADERS  += \
     ../src/mainwindow.h \
     ../src/webcam.h \
-    ../src/facedetection.h
+    ../src/facedetection.h \
+    ../src/settings.h
 
 FORMS    += \
     ../src/mainwindow.ui

@@ -3,11 +3,3 @@ Fenetre parametrage
 	FaceMinSize
 	FaceMaxSize
 	
-Dans FaceDetection :
-faire fonction drawEllipse
-faire toQPixmap	
-mettre en membre 
-    std::vector<cv::Rect> faces;
-    cv::Mat frame_gray;
-    cv::Mat frame;
-    minSize/MaxSize/NbFace;
