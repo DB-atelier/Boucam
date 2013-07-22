@@ -29,6 +29,7 @@ void MainWindow::init()
 //"mainloop"
 void MainWindow::timerEvent(QTimerEvent* event)
 {
+    setWid.update();
     QPixmap* ppix = webcam.capturePixmap();
     if( ppix )
     {

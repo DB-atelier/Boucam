@@ -13,6 +13,8 @@
 #include <stdio.h>
 #include <QPixmap>
 
+#include "iniparser.h"
+
 class ChaussetteUdp; //TODO
 
 
@@ -56,6 +58,8 @@ public:
     int maxSize;
 
     bool detectionEnabled;
+
+    IniParser parser;
 };
 
 #endif // FACEDETECTION_H

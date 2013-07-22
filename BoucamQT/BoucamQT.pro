@@ -22,13 +22,15 @@ SOURCES += \
     ../src/main.cpp \
     ../src/webcam.cpp \
     ../src/facedetection.cpp \
-    ../src/settings.cpp
+    ../src/settings.cpp \
+    ../src/iniparser.cpp
 
 HEADERS  += \
     ../src/mainwindow.h \
     ../src/webcam.h \
     ../src/facedetection.h \
-    ../src/settings.h
+    ../src/settings.h \
+    ../src/iniparser.h
 
 FORMS    += \
     ../src/mainwindow.ui

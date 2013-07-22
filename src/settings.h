@@ -5,6 +5,8 @@
 #include <QSlider>
 #include <QGridLayout>
 #include <QLabel>
+#include <QPushButton>
+
 
 class Settings : public QWidget
 {
@@ -13,7 +15,9 @@ class Settings : public QWidget
         explicit Settings(QWidget *parent = 0);
         void update();
 
-    signals:
+
+    public slots:
+        void validate();
 
     public:
         QSlider* trustMinSli;
@@ -34,7 +38,12 @@ class Settings : public QWidget
         QLabel* doCannyLab;
         QLabel* onDelayLab;
 
+        QLabel* welcomeLab;
         QGridLayout* mainLay;
+        QPushButton* okBut;
+
+
+
 };
 
 #endif // SETTINGS_H

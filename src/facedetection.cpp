@@ -7,10 +7,14 @@ FaceDetection::FaceDetection()
 
 FaceDetection::~FaceDetection()
 {
+    parser.save();
 }
 
 int  FaceDetection::init()
 {
+
+
+
     rng=12345;
     face_cascade_name = "lbpcascade_frontalface.xml";
 
@@ -24,6 +28,13 @@ int  FaceDetection::init()
     maxSize=120;
 
     detectionEnabled = true;
+
+    parser.parse("facedetect.ini");
+    parser.setInts("minSize",&minSize);
+    parser.parseInts("maxSize",&maxSize);
+    parser.setInts("minNeighbors",&minNeighbors);
+
+    std::cout << maxSize << std::endl;
     return 0;
 }
 
