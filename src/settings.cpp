@@ -3,23 +3,23 @@
 Settings::Settings(QWidget *parent) :
     QWidget(parent)
 {
-    trustMinSli = new QSlider;
-    faceMinSli = new QSlider;
-    faceMaxSli = new QSlider;
-    interieMvtSli = new QSlider;
-    interieSclSli = new QSlider;
-    offDelaySli = new QSlider;
-    doCannySli = new QSlider;
-    onDelaySli = new QSlider;
+    trustMinSli = new QSlider(Qt::Horizontal);
+    faceMinSli = new QSlider(Qt::Horizontal);
+    faceMaxSli = new QSlider(Qt::Horizontal);
+    interieMvtSli = new QSlider(Qt::Horizontal);
+    interieSclSli = new QSlider(Qt::Horizontal);
+    offDelaySli = new QSlider(Qt::Horizontal);
+    doCannySli = new QSlider(Qt::Horizontal);
+    onDelaySli = new QSlider(Qt::Horizontal);
 
-    trustMinLab = new QLabel;
-    faceMinLab = new QLabel;
-    faceMaxLab = new QLabel;
-    interieMvtLab = new QLabel;
-    interieSclLab = new QLabel;
-    offDelayLab = new QLabel;
-    doCannyLab = new QLabel;
-    onDelayLab = new QLabel;
+    trustMinLab = new QLabel("Trust min :");
+    faceMinLab = new QLabel("Face Size Min :");
+    faceMaxLab = new QLabel("Face Size Max :");
+    interieMvtLab = new QLabel("Inertie Mvt :");
+    interieSclLab = new QLabel("Inertie Scl :");
+    offDelayLab = new QLabel("Off Delay :");
+    doCannyLab = new QLabel("doCanny :");
+    onDelayLab = new QLabel("On Delay :");
 
     mainLay = new QGridLayout(this);
 
